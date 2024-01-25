@@ -54,8 +54,13 @@ function nextLevel() {
     }, 500)
 }
 function clickAnimation(color) {
+
     $("#"+color).css("background-color", "gray");
-    setTimeout(function() {$("#"+color).css("background-color", color);}, 100);
+    $("#"+color).addClass("box-shadow");
+    setTimeout(function() {
+        $("#"+color).css("background-color", color);
+        $("#"+color).removeClass("box-shadow");
+    }, 100);
     var audio = new Audio("sounds/"+color+".mp3");
     audio.play();
 }
